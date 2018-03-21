@@ -3,7 +3,7 @@
 package main
 
 import (
-	"github.com/pankona/baloon/scene"
+	"github.com/pankona/balloon/scene"
 	"github.com/pankona/gomo-simra/simra"
 )
 
