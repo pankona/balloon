@@ -6,3 +6,7 @@ pc:
 
 mobile:
 	cd $(CURDIR) && gomobile build -o balloon.apk
+
+.PHONY: docs
+docs:
+	make -C $(CURDIR)/docsrc
