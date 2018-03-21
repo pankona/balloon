@@ -1,11 +1,17 @@
 
+ifndef TAG
+TAG = release
+endif
+
 all: pc
 
 pc:
-	cd $(CURDIR) && go build -o balloon
+	cd $(CURDIR) && \
+	go build -tags=$(TAG) -o balloon
 
 mobile:
-	cd $(CURDIR) && gomobile build -o balloon.apk
+	cd $(CURDIR) && \
+	gomobile build -tags=$(TAG) -o balloon.apk
 
 .PHONY: docs
 docs:
