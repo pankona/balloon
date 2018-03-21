@@ -7,11 +7,11 @@ all: pc
 
 pc:
 	cd $(CURDIR) && \
-	go build -tags=$(TAG) -o balloon
+	go build -tags=$(TAG)
 
 mobile:
 	cd $(CURDIR) && \
-	gomobile build -tags=$(TAG) -o balloon.apk
+	gomobile build -tags=$(TAG)
 
 .PHONY: docs
 docs:
