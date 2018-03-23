@@ -16,7 +16,7 @@ func (t *Title) Initialize(sim simra.Simraer) {
 	simlog.FuncIn()
 
 	t.simra = sim
-	t.simra.SetDesiredScreenSize((float32)(configScreenHeight), (float32)(configScreenWidth))
+	t.simra.SetDesiredScreenSize((float32)(configScreenWidth), (float32)(configScreenHeight))
 	t.simra.AddTouchListener(t)
 
 	t.sceneChangeCh = make(chan struct{}, 1)
