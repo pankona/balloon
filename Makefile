@@ -13,6 +13,9 @@ mobile:
 	cd $(CURDIR) && \
 	gomobile build -tags=$(TAG)
 
+clean:
+	rm -f balloon balloon.apk
+
 .PHONY: docs
 docs:
 	make -C $(CURDIR)/docsrc
