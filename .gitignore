@@ -1,3 +1,6 @@
 balloon
 balloon.apk
+docsrc/_book
+docsrc/assets
+docsrc/node_modules
 vendor/
