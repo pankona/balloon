@@ -19,3 +19,6 @@ clean:
 .PHONY: docs
 docs:
 	make -C $(CURDIR)/docsrc
+
+doccommit:
+	git commit -m "update site" $(CURDIR)/docs
