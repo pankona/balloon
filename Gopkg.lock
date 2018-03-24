@@ -67,7 +67,7 @@
     "shiny/driver/internal/x11key",
     "shiny/screen"
   ]
-  revision = "9673cff68816794f1cd927a1e58760e4d41c393b"
+  revision = "8460e604b9de9da5834c9f198cadf9dca4b05cac"
 
 [[projects]]
   branch = "master"
@@ -103,17 +103,17 @@
     "gl",
     "internal/mobileinit"
   ]
-  revision = "2f2872eacd7fc12c252096592f87e9b23bd5be8b"
+  revision = "598bfe4b20d39a660581f014b68e60c5ad425336"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/sys"
   packages = ["windows"]
-  revision = "7ceb54c8418b8f9cdf0177b511d5cbb06e9fae39"
+  revision = "91ee8cde435411ca3f1cd365e8f20131aed4d0a1"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "960cd45f82342266d9e01728ce3c4b400d8a37539dbcc66fbf742c28e726e02a"
+  inputs-digest = "bf4e5c383d73fd45d39bc5be81555af68e752978b9a2efbaba3fdd8d403b6b00"
   solver-name = "gps-cdcl"
   solver-version = 1
