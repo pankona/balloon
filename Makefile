@@ -21,4 +21,5 @@ docs:
 	make -C $(CURDIR)/docsrc
 
 doccommit:
+	git add $(CURDIR)/docs
 	git commit -m "update site" $(CURDIR)/docs
