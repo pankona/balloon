@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>modules · GitBook</title>
+        <title>modules and sequences · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -136,7 +136,7 @@
                 <a href="modules.html">
             
                     
-                    modules
+                    modules and sequences
             
                 </a>
             
@@ -174,7 +174,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >modules</a>
+        <a href="." >modules and sequences</a>
     </h1>
 </div>
 
@@ -186,8 +186,33 @@
                             
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="modules">Modules</h1>
+                                <h1 id="modules-and-sequences">Modules and sequences</h1>
 <p>Here&apos;s Modules&apos; responsibilities and relations.</p>
+<h2 id="basic-event-loop">Basic event loop</h2>
+<p><img src="assets/images/uml/34bc812eb52f21cf10febb9035ca55dbc17033ab.svg"></p>
+<ul>
+<li>It is necessary to care the amount of events not to slow down game loop.<ul>
+<li>All events fired within a Drive function call,<br>should be completed within 1/60 sec if the game want to keep 60 fps.</li>
+</ul>
+</li>
+</ul>
+<h2 id="strategy-of-balloon-spawning">Strategy of balloon spawning</h2>
+<ul>
+<li>Basically ballon spawns in random. Following factors are in random.<ul>
+<li>Spawn interval.</li>
+<li>Balloon appears from bottom line but X position.</li>
+<li>Balloon&apos;s moving speed.</li>
+<li>Balloon&apos;s size.</li>
+<li>Balloon&apos;s color.</li>
+<li>A frog is in balloon or not.</li>
+</ul>
+</li>
+<li>But obey following rules.<ul>
+<li>Don&apos;t spawn multiple balloons in same time.</li>
+</ul>
+</li>
+</ul>
+<p><img src="assets/images/uml/f083511ce5b6f3c0b39abae7f3b251377ca4de33.svg"></p>
 
                                 
                                 </section>
@@ -211,7 +236,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"modules","level":"1.5","depth":1,"previous":{"title":"game play","level":"1.4","depth":1,"path":"gameplay.md","ref":"./gameplay.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","-search"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"modules.md","mtime":"2018-03-24T13:53:07.595Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-24T15:02:08.799Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"modules and sequences","level":"1.5","depth":1,"previous":{"title":"game play","level":"1.4","depth":1,"path":"gameplay.md","ref":"./gameplay.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","-search"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"modules.md","mtime":"2018-03-25T14:44:22.476Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-25T14:46:11.480Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
