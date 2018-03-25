@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="284px" preserveAspectRatio="none" style="width:445px;height:284px;" version="1.1" viewBox="0 0 445 284" width="445px" zoomAndPan="magnify"><defs><filter height="300%" id="fjh3wyv6f4fvf" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FFFFFF" filter="url(#fjh3wyv6f4fvf)" height="188" style="stroke: #000000; stroke-width: 2.0;" width="421" x="13" y="67"/><rect fill="#FFFFFF" filter="url(#fjh3wyv6f4fvf)" height="105" style="stroke: #000000; stroke-width: 2.0;" width="401" x="23" y="143"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="73" x2="73" y1="50" y2="272"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="181" x2="181" y1="50" y2="272"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="265" x2="265" y1="50" y2="272"/><rect fill="#FEFECE" filter="url(#fjh3wyv6f4fvf)" height="42" style="stroke: #A80036; stroke-width: 1.5;" width="77" x="33" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="63" x="40" y="22.3184">Main loop</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="49" x="47" y="36.3184">(Drive)</text><rect fill="#FEFECE" filter="url(#fjh3wyv6f4fvf)" height="42" style="stroke: #A80036; stroke-width: 1.5;" width="49" x="155" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="35" x="162" y="22.3184">Event</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="35" x="162" y="36.3184">Queue</text><rect fill="#FEFECE" filter="url(#fjh3wyv6f4fvf)" height="42" style="stroke: #A80036; stroke-width: 1.5;" width="91" x="218" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="35" x="246" y="22.3184">Event</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="77" x="225" y="36.3184">Subscribers</text><path d="M13,67 L90,67 L90,72 L80,82 L13,82 L13,67 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;"/><rect fill="none" height="188" style="stroke: #000000; stroke-width: 2.0;" width="421" x="13" y="67"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="32" x="28" y="79.4385">loop</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="108" x="105" y="78.6787">[while game scene]</text><polygon fill="#A80036" points="169.5,97,179.5,101,169.5,105,173.5,101" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="73.5" x2="175.5" y1="101" y2="101"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="84" x="80.5" y="97.4385">fetch events</text><polygon fill="#A80036" points="84.5,124,74.5,128,84.5,132,80.5,128" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="78.5" x2="180.5" y1="128" y2="128"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="42" x="90.5" y="124.4385">events</text><path d="M23,143 L100,143 L100,148 L90,158 L23,158 L23,143 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;"/><rect fill="none" height="105" style="stroke: #000000; stroke-width: 2.0;" width="401" x="23" y="143"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="32" x="38" y="155.4385">loop</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="78" x="115" y="154.6787">[len(events)]</text><polygon fill="#A80036" points="253.5,173,263.5,177,253.5,181,257.5,177" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="73.5" x2="259.5" y1="177" y2="177"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="77" x="80.5" y="173.4385">fire events</text><path d="M270,190 L270,239 L410,239 L410,200 L400,190 L270,190 " fill="#FBFB77" filter="url(#fjh3wyv6f4fvf)" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M400,190 L400,200 L410,200 L400,190 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="105" x="276" y="206.4385">each events may</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="119" x="276" y="219.4385">push new event to</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="77" x="276" y="232.4385">event queue</text><!--
+@startuml
+
+hide footbox
+
+participant "Main loop\n(Drive)" as main
+participant "Event\nQueue"       as eq
+participant "Event\nSubscribers" as es
+
+loop while game scene
+  main -> eq : fetch events
+  main <- eq : events
+  
+  loop len(events)
+    main -> es : fire events
+    note right of es : each events may\npush new event to\nevent queue
+  end
+end
+
+@enduml
+
+PlantUML version 1.2018.02(Sat Mar 10 02:20:44 JST 2018)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 1.8.0_162-b12
+Operating System: Linux
+OS Version: 4.12.14-1-MANJARO
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>
