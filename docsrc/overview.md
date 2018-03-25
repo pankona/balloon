@@ -2,12 +2,10 @@
 
 This is design notes of **balloon slash!**
 
-## Concept art
+* TODO: put conceptual pictures
 
-TODO: put pictures
+* For Windows, Linux, OSX, Android
+* Repository -> [https://github.com/pankona/balloon](https://github.com/pankona/balloon)
 
-## OS requirement
-
-* Windows, Linux, OSX, Android
 
 
