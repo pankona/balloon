@@ -53,14 +53,16 @@ participant "Event\nQueue"       as eq
 participant Spawner              as s
 participant Factory              as f
 
+== initialize ==
 create s
 m -> s : new Spawner(frame counter)
-s -> s : event subscribe
-m -> s : run
-eq <- s : push(JudgeSpawn)
+m <- s : event subscribe
 create f
 m -> f : new Factory
-f -> f : event subscribe
+m <- f : event subscribe
+====
+m -> s : run
+eq <- s : push(JudgeSpawn)
 loop while game scene
   m -> eq : fetch events
   m <- eq : events
