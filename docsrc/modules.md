@@ -87,3 +87,84 @@ end
 
 @enduml
 ```
+
+## modules
+
+* modules are connected by event queue.
+
+```uml
+class eventQueue {
+}
+
+class game {
+}
+
+class spawner {
+}
+
+class factory {
+}
+
+class balloon {
+}
+
+class scorer {
+}
+
+eventQueue --> game    : pub
+eventQueue --> spawner : pub
+eventQueue --> factory : pub
+eventQueue --> balloon : pub
+eventQueue --> scorer  : pub
+eventQueue --> control : pub
+
+game    --> eventQueue : sub
+spawner --> eventQueue : sub
+factory --> eventQueue : sub
+balloon --> eventQueue : sub
+scorer  --> eventQueue : sub
+control --> eventQueue : sub
+```
+
+### modules description
+
+* eventQueue
+  * Use to publish/subscribe events by game module
+  * Consists of a single channel
+
+* game
+  * Handle user input (tap or drag)
+  * Handle user interaction for buttons
+
+* spawner
+  * Judge whether spawn a new balloon or not
+  * loops in some time interval
+
+* factory
+  * Spawns a new balloon by receiving Spawn event
+  * Has responsibility to determine where to spawn
+
+* balloon
+  * Spawned by factory.
+  * Balloons will be crashed by tapping or dragging
+  * Crashing balloon will send a Crash event
+  * Balloons will send RunAway event by disappearing from screen
+  * Run away of balloon will send a RunAway event
+
+* scorer
+  * Increase/decrease user's score by receiving Crash/RunAway event
+
+## events
+
+| event      | publisher | subscriber           | next event (possible) | description                                                                                              |
+|------------|-----------|----------------------|-----------------------|----------------------------------------------------------------------------------------------------------|
+| JudgeSpawn | spawner   | spawner              | JudgeSpawn<br>Spawn   | Judge whether spawn a new balloon (frog) or not                                                          |
+| Spawn      | spawner   | factory              | Spawned               | A new balloon will be spawned                                                                            |
+| Spawned    | factory   | -                    | -                     | A new balloon has been spawned                                                                           |
+| Shoot      | game      | balloon              | -                     | Shoot action by tapping screen                                                                           |
+| Slash      | game      | balloon              | -                     | Slash action by dragging screen                                                                          |
+| Crash      | balloon   | scorer<br>JudgeSpawn | -                     | A balloon (or frog) is crashed by shoot or slash.<br>scorer increases score according to what is crashed |
+| RunAway    | balloon   | scorer               | -                     | A balloon (or frog) is run away from screen                                                              |
+| Finish     | control   | game                 | -                     | Finish game by tapping Finish button                                                                     |
+
+
