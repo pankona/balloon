@@ -247,15 +247,15 @@
 <li><p>balloon</p>
 <ul>
 <li>Spawned by factory.</li>
-<li>Balloons will be crashed by tapping or dragging</li>
-<li>Crashing balloon will send a Crash event</li>
-<li>Balloons will send RunAway event by disappearing from screen</li>
-<li>Run away of balloon will send a RunAway event</li>
+<li>Balloons will be bursted by tapping or dragging</li>
+<li>Bursting balloon will send a Bust event</li>
+<li>Balloons will send Escape event by disappearing from screen</li>
+<li>Run away of balloon will send a Escape event</li>
 </ul>
 </li>
 <li><p>scorer</p>
 <ul>
-<li>Increase/decrease user&apos;s score by receiving Crash/RunAway event</li>
+<li>Increase/decrease user&apos;s score by receiving Burst/Escape event</li>
 </ul>
 </li>
 </ul>
@@ -307,14 +307,14 @@
 <td>Slash action by dragging screen</td>
 </tr>
 <tr>
-<td>Crash</td>
+<td>Burst</td>
 <td>balloon</td>
 <td>scorer<br>JudgeSpawn</td>
 <td>-</td>
-<td>A balloon (or frog) is crashed by shoot or slash.<br>scorer increases score according to what is crashed</td>
+<td>A balloon (or frog) is bursted by shoot or slash.<br>scorer increases score according to what is bursted</td>
 </tr>
 <tr>
-<td>RunAway</td>
+<td>Escape</td>
 <td>balloon</td>
 <td>scorer</td>
 <td>-</td>
@@ -352,7 +352,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"modules and sequences","level":"1.5","depth":1,"previous":{"title":"game play","level":"1.4","depth":1,"path":"gameplay.md","ref":"./gameplay.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","-search"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"modules.md","mtime":"2018-04-02T03:54:38.085Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-02T03:56:13.408Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"modules and sequences","level":"1.5","depth":1,"previous":{"title":"game play","level":"1.4","depth":1,"path":"gameplay.md","ref":"./gameplay.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["uml","-search"],"pluginsConfig":{"uml":{"format":"svg","charset":"UTF-8","nailgun":false},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"modules.md","mtime":"2018-04-02T04:59:00.269Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-02T04:59:20.332Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
