@@ -146,13 +146,13 @@ control --> eventQueue : sub
 
 * balloon
   * Spawned by factory.
-  * Balloons will be crashed by tapping or dragging
-  * Crashing balloon will send a Crash event
+  * Balloons will be bursted by tapping or dragging
+  * Bursting balloon will send a Bust event
   * Balloons will send RunAway event by disappearing from screen
   * Run away of balloon will send a RunAway event
 
 * scorer
-  * Increase/decrease user's score by receiving Crash/RunAway event
+  * Increase/decrease user's score by receiving Burst/RunAway event
 
 ## events
 
@@ -163,7 +163,7 @@ control --> eventQueue : sub
 | Spawned    | factory   | -                    | -                     | A new balloon has been spawned                                                                           |
 | Shoot      | game      | balloon              | -                     | Shoot action by tapping screen                                                                           |
 | Slash      | game      | balloon              | -                     | Slash action by dragging screen                                                                          |
-| Crash      | balloon   | scorer<br>JudgeSpawn | -                     | A balloon (or frog) is crashed by shoot or slash.<br>scorer increases score according to what is crashed |
+| Burst      | balloon   | scorer<br>JudgeSpawn | -                     | A balloon (or frog) is bursted by shoot or slash.<br>scorer increases score according to what is bursted |
 | RunAway    | balloon   | scorer               | -                     | A balloon (or frog) is run away from screen                                                              |
 | Finish     | control   | game                 | -                     | Finish game by tapping Finish button                                                                     |
 
