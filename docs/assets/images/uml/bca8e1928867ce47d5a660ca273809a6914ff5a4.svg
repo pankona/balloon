@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="175px" preserveAspectRatio="none" style="width:200px;height:175px;" version="1.1" viewBox="0 0 200 175" width="200px" zoomAndPan="magnify"><defs><filter height="300%" id="f7fe2vzmhj8ym" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--class game--><rect fill="#FEFECE" filter="url(#f7fe2vzmhj8ym)" height="48" id="game" style="stroke: #A80036; stroke-width: 1.5;" width="56" x="15" y="8"/><ellipse cx="30" cy="24" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M33.3906,25.9844 Q32.9688,30.9688 29.6563,30.9688 Q27.7031,30.9688 26.6563,28.9688 Q25.7813,27.2969 25.7813,24.3594 Q25.7813,21.3438 26.75,19.5781 Q27.75,17.7031 29.6563,17.7031 Q32.6875,17.7031 33.3125,22.1406 L31.2344,22.1406 Q30.875,19.6719 29.6563,19.6719 Q27.9219,19.6719 27.9219,24.3594 Q27.9219,29 29.6719,29 Q31.1094,29 31.2656,25.9844 L33.3906,25.9844 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="24" x="44" y="28.5586">game</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="16" x2="70" y1="40" y2="40"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="16" x2="70" y1="48" y2="48"/><!--class factory--><rect fill="#FEFECE" filter="url(#f7fe2vzmhj8ym)" height="48" id="factory" style="stroke: #A80036; stroke-width: 1.5;" width="74" x="106" y="8"/><ellipse cx="121" cy="24" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M124.3906,25.9844 Q123.9688,30.9688 120.6563,30.9688 Q118.7031,30.9688 117.6563,28.9688 Q116.7813,27.2969 116.7813,24.3594 Q116.7813,21.3438 117.75,19.5781 Q118.75,17.7031 120.6563,17.7031 Q123.6875,17.7031 124.3125,22.1406 L122.2344,22.1406 Q121.875,19.6719 120.6563,19.6719 Q118.9219,19.6719 118.9219,24.3594 Q118.9219,29 120.6719,29 Q122.1094,29 122.2656,25.9844 L124.3906,25.9844 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="42" x="135" y="28.5586">factory</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="107" x2="179" y1="40" y2="40"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="107" x2="179" y1="48" y2="48"/><!--class spawner--><rect fill="#FEFECE" filter="url(#f7fe2vzmhj8ym)" height="48" id="spawner" style="stroke: #A80036; stroke-width: 1.5;" width="74" x="6" y="116"/><ellipse cx="21" cy="132" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M24.3906,133.9844 Q23.9688,138.9688 20.6563,138.9688 Q18.7031,138.9688 17.6563,136.9688 Q16.7813,135.2969 16.7813,132.3594 Q16.7813,129.3438 17.75,127.5781 Q18.75,125.7031 20.6563,125.7031 Q23.6875,125.7031 24.3125,130.1406 L22.2344,130.1406 Q21.875,127.6719 20.6563,127.6719 Q18.9219,127.6719 18.9219,132.3594 Q18.9219,137 20.6719,137 Q22.1094,137 22.2656,133.9844 L24.3906,133.9844 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="42" x="35" y="136.5586">spawner</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="79" y1="148" y2="148"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="79" y1="156" y2="156"/><!--class balloon--><rect fill="#FEFECE" filter="url(#f7fe2vzmhj8ym)" height="48" id="balloon" style="stroke: #A80036; stroke-width: 1.5;" width="74" x="115" y="116"/><ellipse cx="130" cy="132" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M133.3906,133.9844 Q132.9688,138.9688 129.6563,138.9688 Q127.7031,138.9688 126.6563,136.9688 Q125.7813,135.2969 125.7813,132.3594 Q125.7813,129.3438 126.75,127.5781 Q127.75,125.7031 129.6563,125.7031 Q132.6875,125.7031 133.3125,130.1406 L131.2344,130.1406 Q130.875,127.6719 129.6563,127.6719 Q127.9219,127.6719 127.9219,132.3594 Q127.9219,137 129.6719,137 Q131.1094,137 131.2656,133.9844 L133.3906,133.9844 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="42" x="144" y="136.5586">balloon</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="116" x2="188" y1="148" y2="148"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="116" x2="188" y1="156" y2="156"/><!--link game to factory--><!--link game to spawner--><!--link spawner to balloon--><!--
+@startuml
+
+class game {
+}
+class factory {
+}
+class spawner {
+}
+class balloon {
+}
+
+
+@enduml
+
+PlantUML version 1.2018.02(Sat Mar 10 02:20:44 JST 2018)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 1.8.0_162-b12
+Operating System: Linux
+OS Version: 4.12.14-1-MANJARO
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>
