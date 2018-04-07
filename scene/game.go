@@ -3,7 +3,6 @@ package scene
 import (
 	"github.com/pankona/gomo-simra/simra"
 	"github.com/pankona/gomo-simra/simra/image"
-	"github.com/pankona/gomo-simra/simra/simlog"
 )
 
 // Game represents a scene object for main game scene
@@ -15,12 +14,9 @@ type Game struct {
 
 // Initialize function for simra.Scener interface
 func (ga *Game) Initialize(sim simra.Simraer) {
-	simlog.FuncIn()
 	ga.simra = sim
 	ga.loadTextures()
 	ga.prepareSprites()
-
-	simlog.FuncOut()
 }
 
 func (ga *Game) loadTextures() {
@@ -32,9 +28,7 @@ func (ga *Game) prepareSprites() {
 	ga.kokeshi.SetScale(64, 64)
 	ga.kokeshi.SetPosition(configScreenWidth/2, configScreenHeight/2)
 	ga.simra.AddSprite(ga.kokeshi)
-
 	ga.kokeshi.ReplaceTexture(ga.kokeshiTex)
-
 }
 
 // Drive function for simra.Driver interface
