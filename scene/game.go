@@ -1,15 +1,22 @@
 package scene
 
 import (
+	"sync"
+
 	"github.com/pankona/gomo-simra/simra"
 	"github.com/pankona/gomo-simra/simra/image"
 )
 
 // Game represents a scene object for main game scene
 type Game struct {
-	simra      simra.Simraer
-	kokeshi    simra.Spriter
-	kokeshiTex *simra.Texture
+	simra          simra.Simraer
+	kokeshi        simra.Spriter
+	kokeshiTex     *simra.Texture
+	progress       progress
+	currentRunLoop func()
+	currentFrame   int64
+	prepareFunc    func()
+	prepare        sync.Once
 }
 
 // Initialize function for simra.Scener interface
@@ -17,6 +24,41 @@ func (ga *Game) Initialize(sim simra.Simraer) {
 	ga.simra = sim
 	ga.loadTextures()
 	ga.prepareSprites()
+	ga.updateRunLoop(nil, ga.runLoopReady)
+}
+
+type progress int
+
+const (
+	progressReady progress = iota
+	progressRunning
+	progressFinished
+)
+
+func (ga *Game) doPrepare() {
+	if ga.prepareFunc != nil {
+		ga.prepare.Do(ga.prepareFunc)
+	}
+}
+
+func (ga *Game) runLoopReady() {
+	ga.doPrepare()
+	// TODO: implement
+}
+
+func (ga *Game) runLoopRunning() {
+	ga.doPrepare()
+	// TODO: implement
+}
+
+func (ga *Game) runLoopFinished() {
+	ga.doPrepare()
+	// TODO: implement
+}
+
+func (ga *Game) updateRunLoop(prepare, runloop func()) {
+	ga.prepareFunc = prepare
+	ga.currentRunLoop = runloop
 }
 
 func (ga *Game) loadTextures() {
@@ -33,4 +75,6 @@ func (ga *Game) prepareSprites() {
 
 // Drive function for simra.Driver interface
 func (ga *Game) Drive() {
+	ga.currentFrame++
+	ga.currentRunLoop()
 }
