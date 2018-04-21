@@ -41,21 +41,6 @@ func (ga *Game) doPrepare() {
 	}
 }
 
-func (ga *Game) runLoopReady() {
-	ga.doPrepare()
-	// TODO: implement
-}
-
-func (ga *Game) runLoopRunning() {
-	ga.doPrepare()
-	// TODO: implement
-}
-
-func (ga *Game) runLoopFinished() {
-	ga.doPrepare()
-	// TODO: implement
-}
-
 func (ga *Game) updateRunLoop(prepare, runloop func()) {
 	ga.prepareFunc = prepare
 	ga.currentRunLoop = runloop
