@@ -24,7 +24,7 @@ func (ga *Game) Initialize(sim simra.Simraer) {
 	ga.simra = sim
 	ga.loadTextures()
 	ga.prepareSprites()
-	ga.updateRunLoop(nil, ga.runLoopReady)
+	ga.updateRunLoop(ga.runLoopPrepareReady, ga.runLoopReady)
 }
 
 type progress int
@@ -42,6 +42,7 @@ func (ga *Game) doOncePrepare() {
 }
 
 func (ga *Game) updateRunLoop(prepare, runloop func()) {
+	ga.prepare = sync.Once{}
 	ga.prepareFunc = prepare
 	ga.currentRunLoop = runloop
 }
