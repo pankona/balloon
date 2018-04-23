@@ -35,7 +35,7 @@ const (
 	progressFinished
 )
 
-func (ga *Game) doPrepare() {
+func (ga *Game) doOncePrepare() {
 	if ga.prepareFunc != nil {
 		ga.prepare.Do(ga.prepareFunc)
 	}
@@ -61,5 +61,6 @@ func (ga *Game) prepareSprites() {
 // Drive function for simra.Driver interface
 func (ga *Game) Drive() {
 	ga.currentFrame++
+	ga.doOncePrepare()
 	ga.currentRunLoop()
 }

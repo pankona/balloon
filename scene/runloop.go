@@ -1,16 +1,26 @@
 package scene
 
+func (ga *Game) runLoopPrepareReady() {
+	// TODO: implement
+}
+
 func (ga *Game) runLoopReady() {
-	ga.doPrepare()
+	// TODO: implement
+	ga.updateRunLoop(ga.runLoopPrepareRunning, ga.runLoopRunning)
+}
+
+func (ga *Game) runLoopPrepareRunning() {
 	// TODO: implement
 }
 
 func (ga *Game) runLoopRunning() {
-	ga.doPrepare()
+	// TODO: implement
+}
+
+func (ga *Game) runLoopPrepareFinished() {
 	// TODO: implement
 }
 
 func (ga *Game) runLoopFinished() {
-	ga.doPrepare()
 	// TODO: implement
 }
