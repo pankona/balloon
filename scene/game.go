@@ -1,10 +1,15 @@
 package scene
 
 import (
+	"context"
 	"sync"
 
 	"github.com/pankona/gomo-simra/simra"
 	"github.com/pankona/gomo-simra/simra/image"
+)
+
+const (
+	eqlen = 512
 )
 
 // Game represents a scene object for main game scene
@@ -17,11 +22,16 @@ type Game struct {
 	currentFrame   int64
 	prepareFunc    func()
 	prepare        sync.Once
+	pubsub         *simra.PubSub
+	eq             chan *command
+	ctx            context.Context
 }
 
 // Initialize function for simra.Scener interface
 func (ga *Game) Initialize(sim simra.Simraer) {
 	ga.simra = sim
+	ga.pubsub = simra.NewPubSub()
+	ga.eq = make(chan *command, eqlen)
 	ga.loadTextures()
 	ga.prepareSprites()
 	ga.updateRunLoop(ga.runLoopPrepareReady, ga.runLoopReady)

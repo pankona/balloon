@@ -26,3 +26,8 @@ func (s *spawner) run(context context.Context) {
 		}
 	}
 }
+
+func (s *spawner) OnEvent(e interface{}) {
+	_ = e.(*command)
+	// TODO: implement
+}

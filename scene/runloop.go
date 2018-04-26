@@ -14,13 +14,17 @@ func (ga *Game) runLoopReady() {
 }
 
 func (ga *Game) runLoopPrepareRunning() {
-	fmt.Println("runLoopPrepareRunning!")
-	// TODO: implement
+	s := &spawner{ga.eq}
+	ga.pubsub.Subscribe("spawner", s)
+	s.run(ga.ctx)
 }
 
 func (ga *Game) runLoopRunning() {
-	fmt.Println("runLoopRunning!")
-	// TODO: implement
+	len := len(ga.eq)
+	for i := 0; i < len; i++ {
+		e := <-ga.eq
+		ga.pubsub.Publish(e)
+	}
 }
 
 func (ga *Game) runLoopPrepareFinished() {
