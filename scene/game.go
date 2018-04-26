@@ -25,6 +25,7 @@ type Game struct {
 	pubsub         *simra.PubSub
 	eq             chan *command
 	ctx            context.Context
+	cancel         func()
 }
 
 // Initialize function for simra.Scener interface
@@ -32,6 +33,7 @@ func (ga *Game) Initialize(sim simra.Simraer) {
 	ga.simra = sim
 	ga.pubsub = simra.NewPubSub()
 	ga.eq = make(chan *command, eqlen)
+	ga.ctx, ga.cancel = context.WithCancel(context.Background())
 	ga.loadTextures()
 	ga.prepareSprites()
 	ga.updateRunLoop(ga.runLoopPrepareReady, ga.runLoopReady)

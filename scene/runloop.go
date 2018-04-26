@@ -18,7 +18,7 @@ func (ga *Game) runLoopPrepareRunning() {
 	ga.pubsub.Subscribe("spawner", s)
 	f := &factory{}
 	ga.pubsub.Subscribe("factory", f)
-	s.run(ga.ctx)
+	go s.run(ga.ctx)
 }
 
 func (ga *Game) runLoopRunning() {
