@@ -34,6 +34,7 @@ func (ga *Game) Initialize(sim simra.Simraer) {
 	ga.pubsub = simra.NewPubSub()
 	ga.eq = make(chan *command, eqlen)
 	ga.ctx, ga.cancel = context.WithCancel(context.Background())
+	ga.simra.AddTouchListener(ga)
 	ga.loadTextures()
 	ga.prepareSprites()
 	ga.updateRunLoop(ga.runLoopPrepareReady, ga.runLoopReady)
@@ -47,6 +48,7 @@ const (
 	progressFinished
 )
 
+// TODO: refactoring
 func (ga *Game) doOncePrepare() {
 	if ga.prepareFunc != nil {
 		ga.prepare.Do(ga.prepareFunc)
@@ -76,4 +78,14 @@ func (ga *Game) Drive() {
 	ga.currentFrame++
 	ga.doOncePrepare()
 	ga.currentRunLoop()
+}
+
+func (ga *Game) OnTouchBegin(x, y float32) {
+}
+
+func (ga *Game) OnTouchMove(x, y float32) {
+}
+
+func (ga *Game) OnTouchEnd(x, y float32) {
+	ga.updateRunLoop(ga.runLoopPrepareFinished, ga.runLoopFinished)
 }

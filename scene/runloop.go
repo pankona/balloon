@@ -30,7 +30,9 @@ func (ga *Game) runLoopRunning() {
 }
 
 func (ga *Game) runLoopPrepareFinished() {
-	// TODO: implement
+	ga.cancel()
+	close(ga.eq)
+	ga.simra.SetScene(&Title{})
 }
 
 func (ga *Game) runLoopFinished() {
