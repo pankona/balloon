@@ -9,10 +9,15 @@ func (ga *Game) runLoopReady() {
 }
 
 func (ga *Game) runLoopPrepareRunning() {
-	s := &spawner{ga.eq}
+	s := &spawner{eq: ga.eq}
+	f := &factory{eq: ga.eq}
+	p := &preserve{
+		eq:       ga.eq,
+		balloons: make(map[*balloon]bool),
+	}
 	ga.pubsub.Subscribe("spawner", s)
-	f := &factory{}
 	ga.pubsub.Subscribe("factory", f)
+	ga.pubsub.Subscribe("preserve", p)
 	go s.run(ga.ctx)
 	ga.updateRunLoop(ga.runLoopRunning)
 }
