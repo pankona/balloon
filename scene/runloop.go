@@ -2,20 +2,14 @@ package scene
 
 import (
 	"fmt"
+
+	"github.com/pankona/gomo-simra/simra"
 )
 
 func (ga *Game) runLoopReady() {
 	// TODO: implement to show like "Ready Go"
 	fmt.Println("runLoopReady!")
 	ga.updateRunLoop(ga.runLoopPrepareRunning)
-}
-
-func mustNoError(m map[error]bool) {
-	for k := range m {
-		if k != nil {
-			panic("failed to subscribe. " + k.Error())
-		}
-	}
 }
 
 func (ga *Game) runLoopPrepareRunning() {
@@ -26,11 +20,21 @@ func (ga *Game) runLoopPrepareRunning() {
 		balloons: make(map[*balloon]bool),
 	}
 
-	m := make(map[error]bool)
-	m[ga.pubsub.Subscribe("spawner", s)] = true
-	m[ga.pubsub.Subscribe("factory", f)] = true
-	m[ga.pubsub.Subscribe("preserve", p)] = true
-	mustNoError(m)
+	subscribers := []struct {
+		id string
+		s  simra.Subscriber
+	}{
+		{"spawner", s},
+		{"factory", f},
+		{"preserve", p},
+	}
+
+	for _, v := range subscribers {
+		err := ga.pubsub.Subscribe(v.id, v.s)
+		if err != nil {
+			panic("failed to subscribe. " + err.Error())
+		}
+	}
 
 	go s.run(ga.ctx)
 	ga.updateRunLoop(ga.runLoopRunning)
