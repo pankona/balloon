@@ -7,6 +7,7 @@ const (
 	cmdBalloonSpawned
 	cmdBalloonOutOfScreen
 	cmdDoAction
+	cmdDraw
 )
 
 type command struct {

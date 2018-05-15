@@ -1,13 +1,15 @@
 package scene
 
-import "fmt"
+import (
+	"fmt"
+)
 
 const upspeed = 10
 
 // balloon represents balloon itself
 type balloon struct {
 	eq     chan *command
-	x, y   float32 // position
+	x, y   float32
 	zindex int
 }
 
@@ -36,4 +38,13 @@ func (b *balloon) doAction() {
 
 func (b *balloon) finalize() {
 	// TODO: implement
+}
+
+func (b *balloon) getPosition() (float32, float32) {
+	return b.x, b.y
+}
+
+func (b *balloon) getScale() (float32, float32) {
+	// TODO: this is temporary implementation.
+	return 64, 64
 }

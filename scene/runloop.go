@@ -19,6 +19,10 @@ func (ga *Game) runLoopPrepareRunning() {
 		eq:        ga.eq,
 		actioners: make(map[actioner]bool),
 	}
+	d := &drawer{
+		simra:   ga.simra,
+		drawers: make(map[drawable]simra.Spriter),
+	}
 
 	subscribers := []struct {
 		id string
@@ -27,6 +31,7 @@ func (ga *Game) runLoopPrepareRunning() {
 		{"spawner", s},
 		{"factory", f},
 		{"preserve", p},
+		{"drawer", d},
 	}
 
 	for _, v := range subscribers {
@@ -47,6 +52,7 @@ func (ga *Game) runLoopRunning() {
 		ga.pubsub.Publish(e)
 	}
 	ga.pubsub.Publish(newCommand(cmdDoAction, nil))
+	ga.pubsub.Publish(newCommand(cmdDraw, nil))
 }
 
 func (ga *Game) runLoopFinished() {
