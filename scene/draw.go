@@ -27,6 +27,10 @@ func (d *drawer) OnEvent(e interface{}) {
 		sp.ReplaceTexture(tex)
 		b := cmd.payload.(drawable)
 		d.drawers[b] = sp
+	case cmdBalloonOutOfScreen:
+		b := cmd.payload.(drawable)
+		sp := d.drawers[b]
+		d.simra.RemoveSprite(sp)
 	case cmdDraw:
 		for k, v := range d.drawers {
 			v.SetPosition(k.getPosition())

@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-const upspeed = 10
+const upspeed = 30
 
 // balloon represents balloon itself
 type balloon struct {
