@@ -5,6 +5,7 @@ type commandtype int
 const (
 	commandSpawn commandtype = iota
 	commandSpawned
+	commandDoAction
 )
 
 type command struct {

@@ -1,5 +1,7 @@
 package scene
 
+const upspeed = 10
+
 // balloon represents balloon itself
 type balloon struct {
 	x, y   int // position
@@ -12,4 +14,8 @@ func newBalloon(x, y, z int) *balloon {
 		y:      y,
 		zindex: z,
 	}
+}
+
+func (b *balloon) doAction() {
+	b.y -= upspeed
 }

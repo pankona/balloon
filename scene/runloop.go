@@ -16,8 +16,8 @@ func (ga *Game) runLoopPrepareRunning() {
 	s := &spawner{eq: ga.eq}
 	f := &factory{eq: ga.eq}
 	p := &preserve{
-		eq:       ga.eq,
-		balloons: make(map[*balloon]bool),
+		eq:        ga.eq,
+		actioners: make(map[actioner]bool),
 	}
 
 	subscribers := []struct {
@@ -46,6 +46,7 @@ func (ga *Game) runLoopRunning() {
 		e := <-ga.eq
 		ga.pubsub.Publish(e)
 	}
+	ga.pubsub.Publish(newCommand(commandDoAction, nil))
 }
 
 func (ga *Game) runLoopFinished() {
