@@ -39,12 +39,6 @@ func (ga *Game) Initialize(sim simra.Simraer) {
 
 type progress int
 
-const (
-	progressReady progress = iota
-	progressRunning
-	progressFinished
-)
-
 func (ga *Game) updateRunLoop(runloop func()) {
 	ga.currentRunLoop = runloop
 }
