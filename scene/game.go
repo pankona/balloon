@@ -16,7 +16,6 @@ type Game struct {
 	simra          simra.Simraer
 	kokeshi        simra.Spriter
 	kokeshiTex     *simra.Texture
-	progress       progress
 	currentRunLoop func()
 	currentFrame   int64
 	pubsub         *simra.PubSub
@@ -36,8 +35,6 @@ func (ga *Game) Initialize(sim simra.Simraer) {
 	ga.prepareSprites()
 	ga.updateRunLoop(ga.runLoopReady)
 }
-
-type progress int
 
 func (ga *Game) updateRunLoop(runloop func()) {
 	ga.currentRunLoop = runloop
