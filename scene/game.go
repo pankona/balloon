@@ -67,12 +67,15 @@ func (ga *Game) Drive() {
 	ga.currentRunLoop()
 }
 
+// OnTouchBegin is called at beginning of touch
 func (ga *Game) OnTouchBegin(x, y float32) {
 }
 
+// OnTouchMove is called at moving of touch
 func (ga *Game) OnTouchMove(x, y float32) {
 }
 
+// OnTouchEnd is called at releasing of touch
 func (ga *Game) OnTouchEnd(x, y float32) {
 	ga.updateRunLoop(ga.runLoopFinished)
 }
