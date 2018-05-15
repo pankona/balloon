@@ -2,7 +2,6 @@ package scene
 
 import (
 	"context"
-	"sync"
 
 	"github.com/pankona/gomo-simra/simra"
 	"github.com/pankona/gomo-simra/simra/image"
@@ -20,8 +19,6 @@ type Game struct {
 	progress       progress
 	currentRunLoop func()
 	currentFrame   int64
-	prepareFunc    func()
-	prepare        sync.Once
 	pubsub         *simra.PubSub
 	eq             chan *command
 	ctx            context.Context
@@ -37,7 +34,7 @@ func (ga *Game) Initialize(sim simra.Simraer) {
 	ga.simra.AddTouchListener(ga)
 	ga.loadTextures()
 	ga.prepareSprites()
-	ga.updateRunLoop(ga.runLoopPrepareReady, ga.runLoopReady)
+	ga.updateRunLoop(ga.runLoopReady)
 }
 
 type progress int
@@ -48,16 +45,7 @@ const (
 	progressFinished
 )
 
-// TODO: refactoring
-func (ga *Game) doOncePrepare() {
-	if ga.prepareFunc != nil {
-		ga.prepare.Do(ga.prepareFunc)
-	}
-}
-
-func (ga *Game) updateRunLoop(prepare, runloop func()) {
-	ga.prepare = sync.Once{}
-	ga.prepareFunc = prepare
+func (ga *Game) updateRunLoop(runloop func()) {
 	ga.currentRunLoop = runloop
 }
 
@@ -76,7 +64,6 @@ func (ga *Game) prepareSprites() {
 // Drive function for simra.Driver interface
 func (ga *Game) Drive() {
 	ga.currentFrame++
-	ga.doOncePrepare()
 	ga.currentRunLoop()
 }
 
@@ -87,5 +74,5 @@ func (ga *Game) OnTouchMove(x, y float32) {
 }
 
 func (ga *Game) OnTouchEnd(x, y float32) {
-	ga.updateRunLoop(ga.runLoopPrepareFinished, ga.runLoopFinished)
+	ga.updateRunLoop(ga.runLoopFinished)
 }

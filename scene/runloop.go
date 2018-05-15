@@ -2,15 +2,10 @@ package scene
 
 import "fmt"
 
-func (ga *Game) runLoopPrepareReady() {
-	// TODO: implement
-	fmt.Println("runLoopPrepareReady!")
-}
-
 func (ga *Game) runLoopReady() {
-	// TODO: implement
+	// TODO: implement to show like "Ready Go"
 	fmt.Println("runLoopReady!")
-	ga.updateRunLoop(ga.runLoopPrepareRunning, ga.runLoopRunning)
+	ga.updateRunLoop(ga.runLoopPrepareRunning)
 }
 
 func (ga *Game) runLoopPrepareRunning() {
@@ -19,6 +14,7 @@ func (ga *Game) runLoopPrepareRunning() {
 	f := &factory{}
 	ga.pubsub.Subscribe("factory", f)
 	go s.run(ga.ctx)
+	ga.updateRunLoop(ga.runLoopRunning)
 }
 
 func (ga *Game) runLoopRunning() {
@@ -29,12 +25,8 @@ func (ga *Game) runLoopRunning() {
 	}
 }
 
-func (ga *Game) runLoopPrepareFinished() {
+func (ga *Game) runLoopFinished() {
 	ga.cancel()
 	close(ga.eq)
 	ga.simra.SetScene(&Title{})
-}
-
-func (ga *Game) runLoopFinished() {
-	// TODO: implement
 }
