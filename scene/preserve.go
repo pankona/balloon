@@ -12,6 +12,10 @@ func (p *preserve) OnEvent(e interface{}) {
 	case cmdBalloonSpawned:
 		b := cmd.payload.(actioner)
 		p.actioners[b] = true
+	case cmdBalloonOutOfScreen:
+		b := cmd.payload.(actioner)
+		b.finalize()
+		delete(p.actioners, b)
 	case cmdDoAction:
 		for k := range p.actioners {
 			k.doAction()

@@ -7,27 +7,33 @@ const upspeed = 10
 // balloon represents balloon itself
 type balloon struct {
 	eq     chan *command
-	x, y   int // position
+	x, y   float32 // position
 	zindex int
 }
 
 func newBalloon(eq chan *command, x, y, z int) *balloon {
 	return &balloon{
 		eq:     eq,
-		x:      x,
-		y:      y,
+		x:      float32(x),
+		y:      float32(y),
 		zindex: z,
 	}
 }
 
-func (b *balloon) isOutOfScreen() bool {
-	return false
+func (b *balloon) isOutOfScreen(screenWidth, screenHeight int) bool {
+	return 0 > b.x || float32(screenWidth) < b.x ||
+		0 > b.y || float32(screenHeight) < b.y
 }
 
 func (b *balloon) doAction() {
-	b.y += upspeed
-	fmt.Printf("i'm %p. position = (%d, %d)\n", b, b.x, b.y)
-	if b.isOutOfScreen() {
+	b.y += float32(upspeed) / float32(60)
+	fmt.Printf("i'm %p. position = (%f, %f)\n", b, b.x, b.y)
+	if b.isOutOfScreen(configScreenWidth, configScreenHeight) {
+		fmt.Println("i'm out of screen!")
 		b.eq <- newCommand(cmdBalloonOutOfScreen, b)
 	}
+}
+
+func (b *balloon) finalize() {
+	// TODO: implement
 }

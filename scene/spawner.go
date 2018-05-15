@@ -8,7 +8,8 @@ import (
 
 // spawner emits spawn event in random
 type spawner struct {
-	eq chan *command
+	eq    chan *command
+	count int
 }
 
 func (s *spawner) run(context context.Context) {
@@ -18,7 +19,11 @@ func (s *spawner) run(context context.Context) {
 			return
 		case <-fps.After(60):
 			// TODO: in random
+			if s.count > 10 {
+				return
+			}
 			s.eq <- newCommand(cmdBalloonSpawn, nil)
+			s.count++
 		}
 	}
 }
