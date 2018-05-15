@@ -20,10 +20,10 @@ type factory struct {
 func (f *factory) OnEvent(e interface{}) {
 	cmd := e.(*command)
 	switch cmd.ct {
-	case commandSpawn:
+	case cmdBalloonSpawn:
 		x := rand.Intn(configScreenWidth)
 		z := rand.Intn(maxZIndex)
-		f.eq <- newCommand(commandSpawned, newBalloon(x, 0, z))
+		f.eq <- newCommand(cmdBalloonSpawned, newBalloon(f.eq, x, 0, z))
 	default:
 		// nop
 	}

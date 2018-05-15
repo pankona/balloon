@@ -18,7 +18,7 @@ func (s *spawner) run(context context.Context) {
 			return
 		case <-fps.After(60):
 			// TODO: in random
-			s.eq <- newCommand(commandSpawn, nil)
+			s.eq <- newCommand(cmdBalloonSpawn, nil)
 		}
 	}
 }

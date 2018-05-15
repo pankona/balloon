@@ -9,10 +9,10 @@ type preserve struct {
 func (p *preserve) OnEvent(e interface{}) {
 	cmd := e.(*command)
 	switch cmd.ct {
-	case commandSpawned:
+	case cmdBalloonSpawned:
 		b := cmd.payload.(actioner)
 		p.actioners[b] = true
-	case commandDoAction:
+	case cmdDoAction:
 		for k := range p.actioners {
 			k.doAction()
 		}

@@ -3,9 +3,10 @@ package scene
 type commandtype int
 
 const (
-	commandSpawn commandtype = iota
-	commandSpawned
-	commandDoAction
+	cmdBalloonSpawn commandtype = iota
+	cmdBalloonSpawned
+	cmdBalloonOutOfScreen
+	cmdDoAction
 )
 
 type command struct {

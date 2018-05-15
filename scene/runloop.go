@@ -46,7 +46,7 @@ func (ga *Game) runLoopRunning() {
 		e := <-ga.eq
 		ga.pubsub.Publish(e)
 	}
-	ga.pubsub.Publish(newCommand(commandDoAction, nil))
+	ga.pubsub.Publish(newCommand(cmdDoAction, nil))
 }
 
 func (ga *Game) runLoopFinished() {
