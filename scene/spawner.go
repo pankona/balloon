@@ -11,10 +11,6 @@ type spawner struct {
 	eq chan *command
 }
 
-func newSpawner(eq chan *command) *spawner {
-	return &spawner{}
-}
-
 func (s *spawner) run(context context.Context) {
 	for {
 		select {
