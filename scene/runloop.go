@@ -1,11 +1,21 @@
 package scene
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func (ga *Game) runLoopReady() {
 	// TODO: implement to show like "Ready Go"
 	fmt.Println("runLoopReady!")
 	ga.updateRunLoop(ga.runLoopPrepareRunning)
+}
+
+func mustNoError(m map[error]bool) {
+	for k := range m {
+		if k != nil {
+			panic("failed to subscribe. " + k.Error())
+		}
+	}
 }
 
 func (ga *Game) runLoopPrepareRunning() {
@@ -15,9 +25,13 @@ func (ga *Game) runLoopPrepareRunning() {
 		eq:       ga.eq,
 		balloons: make(map[*balloon]bool),
 	}
-	ga.pubsub.Subscribe("spawner", s)
-	ga.pubsub.Subscribe("factory", f)
-	ga.pubsub.Subscribe("preserve", p)
+
+	m := make(map[error]bool)
+	m[ga.pubsub.Subscribe("spawner", s)] = true
+	m[ga.pubsub.Subscribe("factory", f)] = true
+	m[ga.pubsub.Subscribe("preserve", p)] = true
+	mustNoError(m)
+
 	go s.run(ga.ctx)
 	ga.updateRunLoop(ga.runLoopRunning)
 }
