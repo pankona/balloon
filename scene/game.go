@@ -4,7 +4,6 @@ import (
 	"context"
 
 	"github.com/pankona/gomo-simra/simra"
-	"github.com/pankona/gomo-simra/simra/image"
 )
 
 const (
@@ -14,8 +13,6 @@ const (
 // Game represents a scene object for main game scene
 type Game struct {
 	simra          simra.Simraer
-	kokeshi        simra.Spriter
-	kokeshiTex     *simra.Texture
 	currentRunLoop func()
 	currentFrame   int64
 	pubsub         *simra.PubSub
@@ -31,25 +28,11 @@ func (ga *Game) Initialize(sim simra.Simraer) {
 	ga.eq = make(chan *command, eqlen)
 	ga.ctx, ga.cancel = context.WithCancel(context.Background())
 	ga.simra.AddTouchListener(ga)
-	ga.loadTextures()
-	ga.prepareSprites()
 	ga.updateRunLoop(ga.runLoopReady)
 }
 
 func (ga *Game) updateRunLoop(runloop func()) {
 	ga.currentRunLoop = runloop
-}
-
-func (ga *Game) loadTextures() {
-	ga.kokeshiTex = ga.simra.NewImageTexture("kokeshi_64x64.png", image.Rect(0, 0, 64, 64))
-}
-
-func (ga *Game) prepareSprites() {
-	ga.kokeshi = ga.simra.NewSprite()
-	ga.kokeshi.SetScale(64, 64)
-	ga.kokeshi.SetPosition(configScreenWidth/2, configScreenHeight/2)
-	ga.simra.AddSprite(ga.kokeshi)
-	ga.kokeshi.ReplaceTexture(ga.kokeshiTex)
 }
 
 // Drive function for simra.Driver interface

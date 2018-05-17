@@ -8,6 +8,7 @@ import (
 type drawable interface {
 	getPosition() (float32, float32)
 	getScale() (float32, float32)
+	getZIndex() int
 }
 
 type drawer struct {
@@ -26,6 +27,7 @@ func (d *drawer) OnEvent(e interface{}) {
 			"kokeshi_64x64.png", image.Rect(0, 0, 64, 64))
 		sp.ReplaceTexture(tex)
 		b := cmd.payload.(drawable)
+		d.simra.SetZIndex(sp, b.getZIndex())
 		d.drawers[b] = sp
 	case cmdBalloonOutOfScreen:
 		b := cmd.payload.(drawable)
