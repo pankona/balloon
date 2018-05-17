@@ -4,7 +4,11 @@ import (
 	"fmt"
 )
 
-const upspeed = 60
+const (
+	balloonUpspeed = 60
+	balloonWidth   = 64
+	balloonHeight  = 64
+)
 
 // balloon represents balloon itself
 type balloon struct {
@@ -28,7 +32,7 @@ func (b *balloon) isOutOfScreen(screenWidth, screenHeight int) bool {
 }
 
 func (b *balloon) doAction() {
-	b.y += float32(upspeed) / float32(60) / float32(b.zindex)
+	b.y += float32(balloonUpspeed) / float32(60) / float32(b.zindex)
 	fmt.Printf("i'm %p. position = (%f, %f)\n", b, b.x, b.y)
 	if b.isOutOfScreen(configScreenWidth, configScreenHeight) {
 		fmt.Println("i'm out of screen!")
@@ -46,7 +50,7 @@ func (b *balloon) getPosition() (float32, float32) {
 
 func (b *balloon) getScale() (float32, float32) {
 	// TODO: this is temporary implementation.
-	return 64 / float32(b.zindex), 64 / float32(b.zindex)
+	return balloonWidth / float32(b.zindex), balloonHeight / float32(b.zindex)
 }
 
 func (b *balloon) getZIndex() int {
