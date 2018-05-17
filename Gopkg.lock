@@ -14,7 +14,7 @@
   branch = "master"
   name = "github.com/gopherjs/gopherjs"
   packages = ["js"]
-  revision = "82b322028c96512b15077093b16a5f1c7ea897ac"
+  revision = "8dffc02ea1cb8398bb73f30424697c60fcf8d4c5"
 
 [[projects]]
   branch = "master"
@@ -39,7 +39,7 @@
     ".",
     "internal/jni"
   ]
-  revision = "91b57df429ab01dd98fd4bf5f46ed87f962a071d"
+  revision = "7a1d13b19d823f7672135569e7a2d040046252e8"
 
 [[projects]]
   branch = "master"
@@ -52,7 +52,7 @@
     "simra/internal/peer",
     "simra/simlog"
   ]
-  revision = "b3bd6c433a701f19750c727ce81cd28fa3d68612"
+  revision = "09fa27ea755cd76c0395f90a385966573f1efcb7"
 
 [[projects]]
   branch = "master"
@@ -78,7 +78,7 @@
     "math/f64",
     "math/fixed"
   ]
-  revision = "f3a9b89b59def9194717c1d0bd4c0d08fa1afa7b"
+  revision = "f315e440302883054d0c2bd85486878cb4f8572c"
 
 [[projects]]
   branch = "master"
@@ -103,17 +103,17 @@
     "gl",
     "internal/mobileinit"
   ]
-  revision = "598bfe4b20d39a660581f014b68e60c5ad425336"
+  revision = "274da161099df258cb919e10e9fd0ae401e143a8"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/sys"
   packages = ["windows"]
-  revision = "91ee8cde435411ca3f1cd365e8f20131aed4d0a1"
+  revision = "7c87d13f8e835d2fb3a70a2912c811ed0c1d241b"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "bf4e5c383d73fd45d39bc5be81555af68e752978b9a2efbaba3fdd8d403b6b00"
+  inputs-digest = "6a0fb5a77651fb6ece986f90655174a40ca6b3c7a8535a16d8a1265cc54e527f"
   solver-name = "gps-cdcl"
   solver-version = 1
