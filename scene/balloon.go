@@ -6,8 +6,8 @@ import (
 
 const (
 	balloonUpspeed = 60
-	balloonWidth   = 64
-	balloonHeight  = 64
+	balloonWidth   = 64 * 2
+	balloonHeight  = 64 * 2
 )
 
 // balloon represents balloon itself
