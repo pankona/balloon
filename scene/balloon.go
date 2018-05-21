@@ -32,8 +32,8 @@ func (b *balloon) isOutOfScreen(screenWidth, screenHeight int) bool {
 }
 
 func (b *balloon) doAction() {
-	b.y += float32(balloonUpspeed) / float32(60) / float32(b.zindex)
 	fmt.Printf("i'm %p. position = (%f, %f)\n", b, b.x, b.y)
+	b.y += float32(balloonUpspeed) / float32(60) / float32(b.zindex+1)
 	if b.isOutOfScreen(configScreenWidth, configScreenHeight) {
 		fmt.Println("i'm out of screen!")
 		b.eq <- newCommand(cmdBalloonOutOfScreen, b)
