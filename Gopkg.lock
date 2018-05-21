@@ -52,7 +52,7 @@
     "simra/internal/peer",
     "simra/simlog"
   ]
-  revision = "09fa27ea755cd76c0395f90a385966573f1efcb7"
+  revision = "964c5e9c9e08d318966b129ea6f8a3314bfd9fe8"
 
 [[projects]]
   branch = "master"
